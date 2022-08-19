@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+    broker :
+        image : mosquitto
+        hostname : broker
+        container_name : broker04
+        expose :
+            - "1883"
+        ports :
+            - 6502:1883
+        volumes :
+            - /home/diot/Desktop/Q5/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    subscriberexam :
+        build : ./subscriber
+        container_name : subscriber04
+        hostname : sub
+        depends_on :
+            - broker

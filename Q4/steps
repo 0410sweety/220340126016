@@ -1,0 +1,6 @@
+Commands :- 
+
+ sudo docker ps -a
+ sudo docker build -t question4:cloud .
+ sudo docker run -it question4:cloud 
+
